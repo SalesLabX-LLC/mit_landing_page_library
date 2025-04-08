@@ -1,14 +1,14 @@
 // src/data/index.ts
 import { Category } from './types';
 
-import { headerCategory } from './catagories/header';
-import { heroCategory } from './catagories/hero';
-import { featureIconCategory } from './catagories/feature-icon';
-import { gridLinesCategory } from './catagories/grid-lines';
-import { byNumbersCategory } from './catagories/by-number';
-import { instructorsCategory } from './catagories/instructors';
-import { textImageOverlapCategory } from './catagories/textimage-overlap';
-import { downloadCategory } from './catagories/download';
+import { headerCategory } from './categories/header';
+import { heroCategory } from './categories/hero';
+import { featureIconCategory } from './categories/feature-icon';
+import { gridLinesCategory } from './categories/grid-lines';
+import { byNumbersCategory } from './categories/by-number';
+import { instructorsCategory } from './categories/instructors';
+import { textImageOverlapCategory } from './categories/textimage-overlap';
+import { downloadCategory } from './categories/download';
 
 export const categories: Category[] = [
   headerCategory,
