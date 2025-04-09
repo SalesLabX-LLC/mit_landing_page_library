@@ -2,7 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # when code is pushed/merged into main
+    branches: [ main ]
+
+permissions:
+  contents: write  # Give the action permission to push commits
 
 jobs:
   build-and-deploy:
@@ -12,7 +15,7 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # ensures we can build and deploy properly
+          fetch-depth: 0
 
       - name: Use Node 18
         uses: actions/setup-node@v3
@@ -25,7 +28,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Deploy 'dist' folder to 'gh-pages' branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
