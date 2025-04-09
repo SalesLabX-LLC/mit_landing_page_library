@@ -154,7 +154,7 @@ export const heroCategory: Category = {
   display: flex;
   gap: 45px;
 }`,
-      previewImg: '/hero-1.png'
+      previewImg: 'hero-1.png'
     },
 
 
@@ -166,21 +166,21 @@ export const heroCategory: Category = {
       title: 'Hero Section 2',
       htmlCode: ``,
       cssCode: ``,
-      previewImg: '/hero-2.png'
+      previewImg: 'hero-2.png'
     },
     {
       id: 'sec-hero-3',
       title: 'Hero Section 3',
       htmlCode: ``,
       cssCode: ``,
-      previewImg: '/hero-3.png'
+      previewImg: 'hero-3.png'
     },
     {
       id: 'sec-hero-4',
       title: 'Hero Section 4',
       htmlCode: ``,
       cssCode: ``,
-      previewImg: '/hero-4.png'
+      previewImg: 'hero-4.png'
     }
   ]
 };
