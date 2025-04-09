@@ -129,15 +129,146 @@ export const downloadCategory: Category = {
         height: 45px;
     }
 }`,
-      previewImg: 'src/assets/images/download-1.png'
+      previewImg: 'download-1.png'
     },
     
     {
       id: 'sec-download-2',
       title: 'Download Section 2',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'src/assets/images/download-2.png'
+      htmlCode: `<!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-columns">
+                <div class="download-column left-column">
+                    <h2 class="download-heading">
+                        <span class="highlight">Submit the form</span> to<br> to download the Future Transportation
+                        Systems: User-Centric, Green, Automated <span style="font-weight: 300; font-style: italic">&</span>
+                        <span class="nowrap"> AI-Driven brochure</span>
+                    </h2>
+                </div>
+                <div class="download-column right-column" id="form">
+                   %%content%%
+                </div>
+            </div>
+        </div>
+    </section>`,
+      cssCode: `/* Download section styles */
+.download-section {
+    background-color: #E8E8E8;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0,
+            /* top left */
+            calc(100% - 150px) 0,
+            /* top right minus triangle width */
+            100% 150px,
+            /* triangle point */
+            100% 100%,
+            /* bottom right */
+            0 100%
+            /* bottom left */
+
+        );
+
+}
+
+
+
+.download-columns {
+    display: grid;
+    gap: 50px;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    /* Ensure content stays above the corner piece */
+    z-index: 1;
+}
+
+
+.download-column.left-column {
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.download-heading {
+    font-size: 36px;
+    line-height: 120%;
+    font-weight: 800;
+    color: #55031A;
+    display: block;
+}
+
+.highlight {
+    color: #A90533;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 991px) {
+    .download-columns {
+        gap: 30px;
     }
+
+    .download-heading {
+        font-size: 30px;
+    }
+
+    .download-section::before {
+        width: 100px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .download-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .download-column.left-column {
+        background-image: none;
+
+    }
+
+    .download-heading {
+        font-size: 26px;
+        margin-bottom: 40px;
+        display: block;
+    }
+
+    .download-section::before {
+        width: 80px;
+        height: 60px;
+    }
+
+    /* Ensure the download section left column is visible */
+    .download-section .left-column {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-section {
+        padding: 80px 0;
+    }
+
+    .download-heading {
+        font-size: 24px;
+    }
+
+    .download-section::before {
+        width: 60px;
+        height: 45px;
+    }
+}`,
+      previewImg: 'download-2.png'
+    },
+
+    {
+        id: 'sec-download-3',
+        title: 'Download Section 3',
+        htmlCode: ``,
+        cssCode: ``,
+        previewImg: '=download-3.png'
+      },
   ]
 };

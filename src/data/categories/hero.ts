@@ -156,18 +156,186 @@ export const heroCategory: Category = {
 }`,
       previewImg: 'hero-1.png'
     },
-
-
-
-
-    
+ 
     {
       id: 'sec-hero-2',
       title: 'Hero Section 2',
-      htmlCode: ``,
-      cssCode: ``,
+      htmlCode: `<!-- Hero Section -->
+
+    <a href="#form"><img src="https://slxcloud.app/MIT/2025/Course-2025-mstn/images/Mobile.jpg"
+            alt="Breakthrough Innovation" class="hero-mobile-image" /></a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Future Transportation Systems: User-Centric, Green, Automated <span style="font-weight: 300; font-style: italic">&</span> AI-Driven</h1>
+
+            <div class="date-container-wrapper">
+                <div class="date-container">
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-pcb/images/Cal-icon.png" alt="Calendar Icon"
+                        class="calendar-icon">
+                    <span class="date-text">Jul 28 - Aug <span class="nowrap"></span>01, 2025</span></span>
+                </div>
+                <div class="date-container">
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-mstn/images/Location-icon%20%281%29.png"
+                        alt="Location Icon" class="calendar-icon">
+                    <span class="date-text">Live Online</span>
+                </div>
+
+            </div>
+            <div class="date-container">
+                <a href="#form" class="brochure-button">DOWNLOAD <span class="nowrap">BROCHURE</span></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="subhero">
+        <div class="container">
+            <div class="subhero-container">
+                <div>
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-mstn/images/LearnOnTheForefrontModelImage.png"
+                        alt="Woman" class="subhero-img" />
+                </div>
+                <div>
+                    <h2>Learn On The Forefront Of Transportation Innovation</h2>
+                    <p>Dive into the latest research from MIT's Intelligent Transportation Systems Lab and learn to
+                        translate real-time data into real-world results that mitigate traffic congestion and other
+                        transportation challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>`,
+      cssCode: `/* Hero section styles */
+.hero {
+    background-image: url("https://slxcloud.app/MIT/2025/Course-2025-mstn/images/Desktop.jpg");
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    padding: 150px 0 170px;
+    position: relative;
+    display: block;
+}
+
+.hero-mobile-image {
+    display: none;
+    width: 100%;
+}
+
+.hero-arrow {
+    position: absolute;
+    max-width: 300px;
+    bottom: -5%;
+    left: 35%;
+    z-index: 1;
+}
+
+.hero-content {
+    width: 95vw;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        width: 85vw;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+
+    .hero {
+        background-image: url("https://slxcloud.app/MIT/2025/Course-2025-mstn/images/Tablet.jpg");
+        background-position: left 85% top 10%
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero-content {
+        width: 1240px;
+    }
+}
+
+.hero-title {
+    color: white;
+    font-size: 48px;
+    line-height: 110%;
+    max-width: 550px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    line-height: 130%;
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.calendar-icon {
+    margin-right: 15px;
+    width: auto;
+    height: 36px;
+}
+
+.date-text {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 110%;
+    font-weight: 700;
+}
+
+.date-container-wrapper {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .date-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 468px) {
+
+    .hero,
+    .header {
+        display: none;
+    }
+
+    .date-container-wrapper {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .date-container {
+        padding-bottom: 0px;
+        margin-top: 20px !important;
+    }
+
+
+    .hero-mobile-image {
+        display: block;
+        width: 100%;
+    }
+}`,
       previewImg: 'hero-2.png'
     },
+
     {
       id: 'sec-hero-3',
       title: 'Hero Section 3',
@@ -175,6 +343,7 @@ export const heroCategory: Category = {
       cssCode: ``,
       previewImg: 'hero-3.png'
     },
+    
     {
       id: 'sec-hero-4',
       title: 'Hero Section 4',
