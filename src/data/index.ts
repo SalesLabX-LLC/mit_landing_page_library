@@ -3,8 +3,6 @@ import { Category } from './types';
 
 import { headerCategory } from './categories/header';
 import { heroCategory } from './categories/hero';
-import { featureIconCategory } from './categories/feature-icon';
-import { gridLinesCategory } from './categories/grid-lines';
 import { instructorsCategory } from './categories/instructors';
 import { textImageOverlapCategory } from './categories/textimage-overlap';
 import { downloadCategory } from './categories/download';
@@ -16,21 +14,21 @@ import { footerCategory } from './categories/footer';
 import { subheroCategory } from './categories/subhero';
 import { expertsCategory } from './categories/experts';
 import { byTheNumbersCategory } from './categories/by-the-numbers';
+import { valueCategory } from './categories/value';
 
 export const categories: Category[] = [
   headerCategory,
   heroCategory,
-  featureIconCategory,
-  gridLinesCategory,
+  subheroCategory,
+  downloadCategory,
+  byTheNumbersCategory,
   instructorsCategory,
   textImageOverlapCategory,
-  downloadCategory,
   courseDetailsCategory,
   expertiseCategory,
+  expertsCategory,
   benefitsCategory,
   aboutCategory,
+  valueCategory,
   footerCategory,
-  subheroCategory,
-  expertsCategory,
-  byTheNumbersCategory,
 ];

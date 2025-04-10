@@ -3,7 +3,7 @@ import { Category } from '../types';
 
 export const textImageOverlapCategory: Category = {
   id: 'cat-text-image',
-  name: 'Text-Image Overlap',
+  name: 'Text Image Overlap',
   sections: [
     {
       id: 'sec-textimg-1',
@@ -221,23 +221,245 @@ export const textImageOverlapCategory: Category = {
     {
       id: 'sec-textimg-2',
       title: 'Text-Image 2',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'src/assets/images/textimg-2.png'
-    },
-    {
-      id: 'sec-textimg-3',
-      title: 'Text-Image 3',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'src/assets/images/textimg-3.png'
-    },
-    {
-      id: 'sec-textimg-4',
-      title: 'Text-Image 4',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'src/assets/images/textimg-4.png'
+      htmlCode: ` <section class="digital-age-section">
+
+        <div class="digital-age-grid">
+
+            <div class="text-column">
+                <div class="text-content">
+                    <h2 class="digital-heading">Unlock AI for accelerated <br> scientific innovation</h2>
+                    <p class="digital-text">Biology. Chemistry. Engineering. AI is transforming how scientific
+                        discoveries are made across multiple disciplines, empowering researchers to enhance
+                        workflows, generate hypotheses, speed up simulations, and automate experiment design.
+                        Looking to harness the latest in AI to optimize your own research? Start here <span
+                            class="nowrap"></span>at MIT.</span></p>
+                    <p class="digital-text">In this high-impact three-day course—taught by MIT Professor Wojciech
+                        Matusik and Harvard University Professor Hanspeter Pfister—you'll learn how to apply a range
+                        of AI advancements to the scientific <span class="nowrap">discovery process.</span></p>
+                    <p class="digital-text">Using generative and predictive AI models, you'll learn how to propose
+                        innovative molecules, materials, and experimental designs, enabling you to optimize planning
+                        and accelerate results. You'll also master AI techniques for solving common scientific
+                        challenges, such as working with small datasets and automating repetitive tasks, freeing you
+                        to focus on higher-value problem solving. Additionally, you'll dive into structured methods
+                        for data visualization, making complex research findings easier to interpret <span
+                            class="nowrap">and share.</span></p>
+                </div>
+            </div>
+            <div class="image-column">
+                <img src="https://slxcloud.app/MIT/2025/Course-2025-aisd/images/scientific-innovation.png" alt="Unlock AI for accelerated
+                        scientific innovation" class="digital-image">
+            </div>
+        </div>
+    </section>`,
+      cssCode: `/* Digital Age Section with Image and Text */
+.digital-age-section {
+    margin-top: 75px;
+    padding: 0px 0 0px;
+    background-color: #fff;
+    position: relative;
+    /* Light background for the section */
+}
+
+
+.digital-age-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 0px;
+    align-items: center;
+}
+
+
+.digital-image {
+    width: 50vw;
+
+    border-radius: 0 10px 10px 0;
+  
+}
+
+.text-column {
+    display: flex;
+    align-items: center;
+}
+
+.text-content {
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    color: #262525;
+    z-index: 2;
+}
+
+.digital-heading {
+    font-size: 32px;
+    font-weight: 800;
+    /* extra bold */
+    line-height: 120%;
+    color: 262525;
+    margin-bottom: 20px;
+}
+
+.digital-text {
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 20px;
+}
+
+.digital-text:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 1600px) {
+
+    .text-content {
+        border-radius: 10px;
+
     }
+}
+
+@media (min-width: 1440px) {
+
+    .text-content {
+        
+        padding: 90px;
+        padding-left: calc((100vw - 1240px)/2);
+        padding-right: 80px;
+        width: 55vw;
+    }
+}
+@media (max-width: 1440px) {
+
+    .text-content {
+        
+        padding: 70px 7.5vw;
+        width: 55vw;
+    }
+}
+
+
+@media (min-width: 991px) {
+    .digital-image  {
+        position: absolute;
+    top: -100px;
+    width: 50vw;
+    left: 50%;
+    }
+
+    
+}
+/* Media query for tablet and below */
+@media (max-width: 991px) {
+    .digital-age-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .text-content {
+        border-radius:10px 10px 0 0;
+        padding: 40px 7.5vw;
+        width: 100%;
+
+    }
+
+    .digital-heading {
+        font-size: 30px;
+    }
+
+    .digital-image {
+        position: unset;
+        width: 100%;
+        border-radius:  0 0 10px 10px;
+    }
+
+    .digital-age-section {
+        margin-top: 0;
+    }
+}
+
+/* Media query for mobile */
+@media (max-width: 767px) {
+    .digital-age-section {
+        padding: 60px 0;
+    }
+
+    .text-content {
+        border-radius:10px 10px 0 0 ;
+        padding: 40px 2.5vw;
+
+    }
+
+    .digital-heading {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .digital-text {
+        font-size: 15px;
+        line-height: 145%;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .digital-age-section {
+        padding: 40px 0;
+    }
+
+    .text-content {
+        border-radius:10px 10px 0 0 ;
+        padding: 40px 2.5vw;
+    }
+
+    .digital-heading {
+        font-size: 24px;
+    }
+}
+
+.digital-age-arrow {
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    z-index: 999;
+}
+
+@media (max-width: 1700px) {
+    .digital-age-arrow {
+        max-width: 450px;
+        position: absolute;
+        top: 45%;
+        left: 15%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .digital-age-arrow {
+        max-width: 450px;
+        position: absolute;
+        top: 45%;
+        left: 10%;
+    }
+}
+
+@media (max-width: 1140px) {
+    .digital-age-arrow {
+        max-width: 450px;
+        position: absolute;
+        top: 45%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 992px) {
+    .digital-age-arrow {
+        display: none;
+    }
+}
+
+`,
+      previewImg: 'textimg-2.png'
+    },
+
+    
+    
   ]
 };

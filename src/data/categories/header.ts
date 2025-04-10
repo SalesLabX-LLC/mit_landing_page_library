@@ -40,26 +40,6 @@ export const headerCategory: Category = {
 }`,
       previewImg: 'header-1.png'
     },
-    {
-      id: 'sec-header-2',
-      title: 'Header Section 2',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'header-2.png'
-    },
-    {
-      id: 'sec-header-3',
-      title: 'Header Section 3',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'header-3.png'
-    },
-    {
-      id: 'sec-header-4',
-      title: 'Header Section 4',
-      htmlCode: ``,
-      cssCode: ``,
-      previewImg: 'header-4.png'
-    }
+    
   ]
 };

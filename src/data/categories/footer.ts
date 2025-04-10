@@ -119,13 +119,7 @@ export const footerCategory: Category = {
       previewImg: 'footer-1.png'
     },
 
-    {
-        id: 'sec-footer-2',
-        title: 'Footer 2',
-        htmlCode: ``,
-        cssCode: ``,
-        previewImg: 'footer-2.png'
-      },
+   
     
   ]
 };

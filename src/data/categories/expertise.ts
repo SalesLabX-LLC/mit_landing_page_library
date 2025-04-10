@@ -488,10 +488,124 @@ export const expertiseCategory: Category = {
       {
         id: 'sec-expertise-3',
         title: 'Download Section 3',
-        htmlCode: ``,
-        cssCode: ``,
+        htmlCode: `<section class="cards-section">
+        <div class="container">
+            <h2 class="section-heading">In this program, <span class="nowrap">you will:</span></h2>
+        </div>
+        <div class="container">
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-air/images/MIT%2003.31%20AI%20in%20Robotics%20Learning%20Algorithms%2C%20Design%20and%20Safety%20%20am-ICON1.png"
+                        alt="Core Competencies" class="card-icon">
+                    <div class="card-text">
+                        Discover different ways to apply large language models and generative AI <span class="nowrap">in
+                            robotics</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-air/images/MIT%2003.31%20AI%20in%20Robotics%20Learning%20Algorithms%2C%20Design%20and%20Safety%20%20am-ICON2.png"
+                        alt="Core Competencies" class="card-icon">
+                    <div class="card-text">
+                        Learn how to optimize the robot <span class="nowrap">design process</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-air/images/MIT%2003.31%20AI%20in%20Robotics%20Learning%20Algorithms%2C%20Design%20and%20Safety%20%20am-%20ICON3.png"
+                        alt="Core Competencies" class="card-icon">
+                    <div class="card-text">
+                        Acquire methods for verifying, testing, and ensuring safety protocols <span class="nowrap">for
+                            robots</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <img src="https://slxcloud.app/MIT/2025/Course-2025-air/images/MIT%2003.31%20AI%20in%20Robotics%20Learning%20Algorithms%2C%20Design%20and%20Safety%20%20am-ICON4.png"
+                        alt="Core Competencies" class="card-icon">
+                    <div class="card-text">
+                        Tour MIT labs engaged in cutting-edge <span class="nowrap">robotics research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>`,
+        cssCode: `/* Cards Grid Section Styles */
+.cards-section {
+    padding: 60px 0;
+}
+
+.cards-section .section-heading {
+    font-size: 32px;
+    font-weight: 800;
+    color: #01318C;
+    margin-bottom: 37px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    background-color: #E4EAF5;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.card-icon {
+    flex-shrink: 0;
+    width: 55px;
+    height: auto;
+}
+
+.card-text {
+    margin-left: 10px;
+    color: #252525;
+    font-size: 15px;
+    font-weight: 500;
+    /* medium weight */
+    line-height: 140%;
+    text-align: left;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-icon {
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        margin-left: 0;
+    }
+}
+`,
         previewImg: 'expertise-3.png'
       },
+
+     
       
       
     ]
