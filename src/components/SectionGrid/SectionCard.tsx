@@ -92,6 +92,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
             >
               Copy HTML
             </Button>
+            {section.cssCode && (
             <Button
               onClick={(e) => handleCopy(section.cssCode, e)}
               sx={{
@@ -105,6 +106,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
             >
               Copy CSS
             </Button>
+            )}
           </Box>
         )}
       </Card>

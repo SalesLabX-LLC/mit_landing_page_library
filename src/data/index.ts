@@ -15,8 +15,10 @@ import { subheroCategory } from './categories/subhero';
 import { expertsCategory } from './categories/experts';
 import { byTheNumbersCategory } from './categories/by-the-numbers';
 import { valueCategory } from './categories/value';
+import { boilerplateCategory } from './categories/boilerplate';
 
 export const categories: Category[] = [
+  boilerplateCategory,
   headerCategory,
   heroCategory,
   subheroCategory,
@@ -31,4 +33,5 @@ export const categories: Category[] = [
   aboutCategory,
   valueCategory,
   footerCategory,
+  
 ];

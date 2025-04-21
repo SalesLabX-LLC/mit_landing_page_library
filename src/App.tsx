@@ -24,7 +24,7 @@ function App() {
   const currentCategory = categories.find(cat => cat.id === selectedCategoryId);
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height: '100vh' }}>
       <CssBaseline />
 
       <AppBar
