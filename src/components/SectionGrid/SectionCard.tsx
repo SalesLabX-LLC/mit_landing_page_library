@@ -42,7 +42,14 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
   return (
     <>
       <Card
-        sx={{ position: 'relative', cursor: 'pointer' }}
+        sx={{
+          height: '90%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          position: 'relative',
+          cursor: 'pointer',
+        }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={handleCardClick}
@@ -51,14 +58,14 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
           component="img"
           sx={{
             width: '100%',
-            height: 140,
+            height: '80%', // ← use percentage of the card height
             objectFit: 'cover'
           }}
           image={section.previewImg}
           alt={section.title}
         />
 
-        <CardContent>
+        <CardContent sx={{ backgroundColor: '#f5f5f5' }}>
           <Typography variant="subtitle1">{section.title}</Typography>
         </CardContent>
 

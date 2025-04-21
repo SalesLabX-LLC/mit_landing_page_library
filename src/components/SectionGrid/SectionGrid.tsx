@@ -1,13 +1,9 @@
-// File: src/components/SectionGrid/SectionGrid.tsx
-
 import type { FC } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import SectionCard from './SectionCard';
-// IMPORTANT: import your Category, Section from the new types file
 import { Category, Section } from '../../data/types'; 
 
 interface SectionGridProps {
-  // category can be undefined if no category selected
   category?: Category;
 }
 
@@ -21,13 +17,13 @@ const SectionGrid: FC<SectionGridProps> = ({ category }) => {
   }
 
   return (
-    <Box p={2}>
+    <Box p={2} sx={{ height: 'calc(100vh - 64px)' }}>
       <Typography variant="h5" gutterBottom>
         {category.name} Sections
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ height: '100%' }}>
         {category.sections.map((section: Section) => (
-          <Grid item xs={6} key={section.id}>
+          <Grid item xs={6} key={section.id} sx={{ height: '50%' }}>
             <SectionCard section={section} />
           </Grid>
         ))}
