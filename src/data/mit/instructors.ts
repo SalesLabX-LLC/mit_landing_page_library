@@ -1,5 +1,5 @@
 // src/data/instructors.ts
-import { Category } from '../types';
+import { Category } from '../types'
 
 export const instructorsCategory: Category = {
   id: 'cat-instructors',

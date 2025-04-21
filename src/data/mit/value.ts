@@ -8,8 +8,8 @@ export const valueCategory: Category = {
     
 
     {
-        id: 'sec-value-1',
-        title: 'Value Section 1',
+        id: 'sec-value-',
+        title: 'Value Section 2',
         htmlCode: `<section class="value-section">
         <div class="container">
             <div class="value-grid">
@@ -135,7 +135,13 @@ export const valueCategory: Category = {
         previewImg: 'value-1.png'
       },
 
-     
+      {
+        id: 'sec-value-2',
+        title: 'Value Section 2',
+        htmlCode: ``,
+        cssCode: ``,
+        previewImg: 'value-2.png'
+      },
 
    
   ]
