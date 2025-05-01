@@ -1,16 +1,33 @@
-// File: src/App.tsx
-import { useState } from 'react';
-import { Box, CssBaseline, AppBar, Toolbar, IconButton, Typography, useMediaQuery } from '@mui/material';
+import { useState, useEffect } from 'react';
+import {
+  Box,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  useMediaQuery
+} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import Sidebar from './components/Sidebar/Sidebar';
 import SectionGrid from './components/SectionGrid/SectionGrid';
-import { categories } from './data'; 
 
+import { clients } from './data/clients';
 
 function App() {
-  const [selectedCategoryId, setSelectedCategoryId] = useState(categories[0].id);
+  const [selectedClientId, setSelectedClientId] = useState('');
+  const selectedClient = clients.find((c) => c.id === selectedClientId) ?? null;
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState('');
+  const currentCategory = selectedClient?.categories.find((cat) => cat.id === selectedCategoryId) ?? null;
+
+  useEffect(() => {
+    if (selectedClient && selectedClient.categories.length > 0) {
+      setSelectedCategoryId(selectedClient.categories[0].id);
+    }
+  }, [selectedClientId]);
 
   // For responsive drawer
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,11 +37,8 @@ function App() {
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-  // Find the currently selected category data
-  const currentCategory = categories.find(cat => cat.id === selectedCategoryId);
-
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height: '100vh' }}>
       <CssBaseline />
 
       <AppBar
@@ -51,28 +65,34 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      {/* SIDEBAR */}
+      {/* SIDEBAR always renders */}
       <Sidebar
         drawerWidth={drawerWidth}
         mobileOpen={mobileOpen}
         onDrawerToggle={handleDrawerToggle}
         isMobile={isMobile}
-        categories={categories}
+        categories={selectedClient?.categories ?? []}
         selectedCategoryId={selectedCategoryId}
         onSelectCategory={setSelectedCategoryId}
+        selectedClientId={selectedClientId}
+        onSelectClient={setSelectedClientId}
       />
 
-      {/* MAIN CONTENT */}
       <Box
         component="main"
         sx={{
           flexGrow: 1,
           p: 2,
           mt: '64px',
-          
         }}
       >
-        <SectionGrid category={currentCategory} />
+        {currentCategory ? (
+          <SectionGrid category={currentCategory} />
+        ) : (
+          <Typography variant="h6" color="textSecondary">
+            Please select a client to begin
+          </Typography>
+        )}
       </Box>
     </Box>
   );

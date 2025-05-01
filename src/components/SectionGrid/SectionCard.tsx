@@ -4,14 +4,12 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  IconButton,
   Box,
-  Tooltip,
   Dialog,
   DialogContent,
-  Snackbar
+  Snackbar,
+  Button
 } from '@mui/material';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { Section } from '../../data/types';
 
 interface SectionCardProps {
@@ -21,28 +19,22 @@ interface SectionCardProps {
 const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
   const [hovered, setHovered] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
-
-  // For the non-blocking copy feedback:
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handleCardClick = () => {
-    console.log('Card clicked!');
     setOpenDialog(true);
   };
 
-  const handleCloseDialog = () => setOpenDialog(false);
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
 
-  // Called by the copy icons:
   const handleCopy = (text: string, e?: React.MouseEvent) => {
-    if (e) {
-      e.stopPropagation();
-    }
+    if (e) e.stopPropagation();
     navigator.clipboard.writeText(text);
-    // Show a quick, auto-disappearing message
     setSnackbarOpen(true);
   };
 
-  // Close the "Copied" message
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
@@ -50,7 +42,14 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
   return (
     <>
       <Card
-        sx={{ position: 'relative', cursor: 'pointer' }}
+        sx={{
+          height: '90%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          position: 'relative',
+          cursor: 'pointer',
+        }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={handleCardClick}
@@ -59,14 +58,14 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
           component="img"
           sx={{
             width: '100%',
-            height: 140,
+            height: '80%', // ← use percentage of the card height
             objectFit: 'cover'
           }}
           image={section.previewImg}
           alt={section.title}
         />
 
-        <CardContent>
+        <CardContent sx={{ backgroundColor: '#f5f5f5' }}>
           <Typography variant="subtitle1">{section.title}</Typography>
         </CardContent>
 
@@ -82,31 +81,43 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              pointerEvents: 'none', // let card clicks pass through
+              gap: 2,
+              pointerEvents: 'none',
+              flexDirection: 'row'
             }}
           >
-            {/* The icons themselves get pointerEvents: 'auto' so they're still clickable */}
-            <Tooltip title="Copy HTML">
-              <IconButton
-                sx={{ color: '#fff', mx: 1, pointerEvents: 'auto' }}
-                onClick={(e) => handleCopy(section.htmlCode, e)}
-              >
-                <ContentCopyIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Copy CSS">
-              <IconButton
-                sx={{ color: '#fff', mx: 1, pointerEvents: 'auto' }}
-                onClick={(e) => handleCopy(section.cssCode, e)}
-              >
-                <ContentCopyIcon />
-              </IconButton>
-            </Tooltip>
+            <Button
+              onClick={(e) => handleCopy(section.htmlCode, e)}
+              sx={{
+                backgroundColor: '#001C39',
+                color: '#ffffff',
+                pointerEvents: 'auto',
+                '&:hover': {
+                  backgroundColor: '#003366'
+                }
+              }}
+            >
+              Copy HTML
+            </Button>
+            {section.cssCode && (
+            <Button
+              onClick={(e) => handleCopy(section.cssCode, e)}
+              sx={{
+                backgroundColor: '#FF8000',
+                color: '#ffffff',
+                pointerEvents: 'auto',
+                '&:hover': {
+                  backgroundColor: '#e67300'
+                }
+              }}
+            >
+              Copy CSS
+            </Button>
+            )}
           </Box>
         )}
       </Card>
 
-      {/* Dialog for full-size image */}
       <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="lg">
         <DialogContent sx={{ p: 0 }}>
           <img
@@ -117,10 +128,9 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
         </DialogContent>
       </Dialog>
 
-      {/* Snackbar for quick "Copied to clipboard" feedback */}
       <Snackbar
         open={snackbarOpen}
-        autoHideDuration={2000} // e.g. 2s
+        autoHideDuration={2000}
         onClose={handleCloseSnackbar}
         message="Copied to clipboard!"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
